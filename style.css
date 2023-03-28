@@ -1,0 +1,113 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+}
+
+.content-container {
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-container > h2 {
+    margin: 0px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.info {
+    position: absolute;
+    border: 1px solid black;
+    border-radius: .5rem ;
+    background: white;
+    visibility: hidden;
+    padding: 1rem;
+}
+
+.info > h2 {
+    margin: 0px;
+}
+
+
+
+.hidden {
+    visibility: hidden!important;
+    position: absolute!important;
+    top: 0px!important;
+    left: 0px!important;
+}
+
+.visible {
+    visibility: visible!important;
+}
+
+.computer-wrap {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+svg:first-child {
+    max-height: 800px;
+    display: flex;
+    min-width: 1000px;
+}
+
+img {
+    width: 100%;
+    height:  100%;
+}
+
+
+[title="Case"], [title="Case"] > *,  [title="Motherboard"], [title="Motherboard"] > *{
+    z-index: 0!important;
+}
+
+[title], [title] > * {
+    z-index: 10;
+    position: relative;
+    display: flex;
+}
+
+rect, circle, polygon {
+    transition: fill .5s ease, stroke .5s ease, stroke-opacity .5s ease, stroke-width .5s ease;
+}
+
+rect:not(:hover), circle:not(:hover), polygon:not(:hover) {
+    fill: transparant;
+    stroke-width: 5px;
+    stroke-opacity: 0;
+    stroke: #d0cfff;
+    animation-name: strokeAnimation;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-delay: 1.5s;
+}
+
+@keyframes strokeAnimation {
+    0% {
+        stroke-opacity: 0;
+    }
+    10% {
+        stroke-opacity: 1;
+    }
+    20% {
+        stroke-opacity: 0;
+    }
+    80%{
+        stroke-opacity: 0;
+    }
+    90% {
+        stroke-opacity: 1;
+    }
+    100% {
+        stroke-opacity: 0;
+    }
+}
+
+rect:hover, circle:hover, polygon:hover {
+    fill: rgba(164, 164, 164, 0.61) !important;
+    stroke-opacity: 1!important;
+    stroke: #8d9cff !important;
+    stroke-width: 3px;
+}
